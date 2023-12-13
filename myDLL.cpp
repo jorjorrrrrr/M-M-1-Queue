@@ -27,7 +27,7 @@ void myDLL::insertDataAtTail(void* dataStr_in){
     this->listSize++;
 }
 
-char* myDLL::removeDataFromHead(){
+void* myDLL::removeDataFromHead(){
     if (this->listSize == 0) {
         std::cerr << "ERROR !! No element can be removed !!\nExiting..." << std::endl;
         exit(-1);
@@ -40,7 +40,7 @@ char* myDLL::removeDataFromHead(){
         this->head->prev = nullptr;
     }
 
-    return (char*)node->dataPtr;
+    return node->dataPtr;
 }
 
 void myDLL::insertSortData(void* dataStr_in, int index_in){

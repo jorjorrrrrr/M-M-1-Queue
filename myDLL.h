@@ -17,7 +17,7 @@ class myDLL {
 public:
     myDLL();	            // constructor
     void insertDataAtTail(void* dataStr_in);
-    char* removeDataFromHead();
+    void* removeDataFromHead();
     void insertSortData(void* dataStr_in, int index_in);
     void print();
 private:
