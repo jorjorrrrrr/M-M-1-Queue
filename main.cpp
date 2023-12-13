@@ -30,7 +30,7 @@ int main(){
     //          into dataList and print out the result through function "print"
     std::cout << ">>> Verify dataList <<<" << std::endl;
     for (int i = 0; i < 20; i++) {
-        dataList.insertDataAtTail(cstring[i].str);
+        dataList.insertDataAtTail((void*)cstring[i].str);
     }
     dataList.print();
 

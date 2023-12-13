@@ -7,7 +7,7 @@ myDLL::myDLL(){
     this->listSize = 0;
 }
 
-void myDLL::insertDataAtTail(char* dataStr_in){
+void myDLL::insertDataAtTail(void* dataStr_in){
     myDLL_node* node = new myDLL_node(dataStr_in, this->listSize);
 
     if (this->listSize == 0) {
@@ -40,10 +40,10 @@ char* myDLL::removeDataFromHead(){
         this->head->prev = nullptr;
     }
 
-    return node->dataPtr;
+    return (char*)node->dataPtr;
 }
 
-void myDLL::insertSortData(char* dataStr_in, int index_in){
+void myDLL::insertSortData(void* dataStr_in, int index_in){
     
     /* INSERT SORT : compare current node with new node from tail to head*/
 
@@ -119,14 +119,14 @@ void myDLL::insertSortData(char* dataStr_in, int index_in){
 void myDLL::print(){
     myDLL_node* node = this->head;
     for (unsigned i = 0; i < this->listSize; i++) {
-        std::cout << node->dataPtr;
+        std::cout << (char*)node->dataPtr;
         if (i != this->listSize - 1) std::cout << " ";
         node = node->next;
     }
-    // std::cout << " | ";
+    std::cout << " | ";
     node = this->tail;
     for (unsigned i = 0; i < this->listSize; i++) {
-        std::cout << node->dataPtr;
+        std::cout << (char*)node->dataPtr;
         if (i != this->listSize - 1) std::cout << " ";
         node = node->prev;
     }

@@ -4,9 +4,9 @@
 struct myDLL_node {
     myDLL_node* next;	    // pointing to the next node in the list
     myDLL_node* prev;		// pointing to the previous node in the list
-    char* dataPtr;	        // pointing to a c-style string
+    void* dataPtr;	        // pointing to a c-style string
     int index;	            // used for insertion sort
-    myDLL_node(char* dataPtr, int index) :dataPtr(dataPtr), 
+    myDLL_node(void* dataPtr, int index) :dataPtr(dataPtr), 
                                             index(index),
                                             next(nullptr),
                                             prev(nullptr) {}
@@ -16,9 +16,9 @@ struct myDLL_node {
 class myDLL {
 public:
     myDLL();	            // constructor
-    void insertDataAtTail(char* dataStr_in);
+    void insertDataAtTail(void* dataStr_in);
     char* removeDataFromHead();
-    void insertSortData(char* dataStr_in, int index_in);
+    void insertSortData(void* dataStr_in, int index_in);
     void print();
 private:
     myDLL_node* head;	    //pointing to the 1st node in the list
