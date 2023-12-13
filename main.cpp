@@ -1,6 +1,6 @@
 #include <iostream>
 #include "myDLL.h"
-
+#include "exponentialRand.h"
 
 struct CSTYLE{
     char* str;
@@ -45,6 +45,11 @@ int main(){
         std::cout << dataListSorted.removeDataFromHead() << " ";
     }
     std::cout << std::endl;
+
+    exponentialRand* expRand = new exponentialRand();
+    for (int i = 0; i < 20; i++) {
+        std::cout << expRand->eRand() << std::endl;
+    }
     
     return 0;
 }
