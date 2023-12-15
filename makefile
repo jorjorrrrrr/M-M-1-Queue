@@ -1,12 +1,20 @@
-main: main.o myDLL.o exponentialRand.o
-	g++ -o main main.o myDLL.o exponentialRand.o && ./main
-#main: main.o myDDL.o EventList.o exponentialRand.o
-#    g++ -o main main.o myDLL.o EventList.o exponentialRand.o
+CC = g++
+#INSTDIR =
+#INCLUDE = .
+CFLAGS = -g -Wall
+#LIBS +=
+
+main: main.o myDLL.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o
+	$(CC) -o main main.o myDLL.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o && ./main
 main.o: main.cpp myDLL.cpp myDLL.h exponentialRand.cpp exponentialRand.h
-	g++ -c main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
+PKTArrivalEventGenerator.o: PKTArrivalEventGenerator.cpp PKTArrivalEventGenerator.h
+	$(CC) $(CFLAGS) -c PKTArrivalEventGenerator.cpp
 myDLL.o: myDLL.cpp myDLL.h
-	g++ -c myDLL.cpp
+	$(CC) $(CFLAGS) -c myDLL.cpp
+EventList.o: EventList.cpp EventList.h
+	$(CC) $(CFLAGS) -c EventList.cpp
 exponentialRand.o: exponentialRand.cpp exponentialRand.h
-	g++ -c exponentialRand.cpp
+	$(CC) $(CFLAGS) -c exponentialRand.cpp
 clean:
 	rm -f main *.o
