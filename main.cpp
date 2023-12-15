@@ -51,6 +51,5 @@ int main(){
         std::cout << expRand->eRand() << std::endl;
     }
 
-
     return 0;
 }
