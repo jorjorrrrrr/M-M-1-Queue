@@ -6,10 +6,10 @@ struct myDLL_node {
     myDLL_node* prev;		// pointing to the previous node in the list
     void* dataPtr;	        // pointing to a c-style string
     int index;	            // used for insertion sort
-    myDLL_node(void* dataPtr, int index) :dataPtr(dataPtr), 
-                                            index(index),
-                                            next(nullptr),
-                                            prev(nullptr) {}
+    myDLL_node(void* dataPtr, int index) : next(nullptr),
+                                            prev(nullptr),
+                                            dataPtr(dataPtr),
+                                            index(index) {}
 };
 
 
