@@ -2,6 +2,8 @@
 #define EVENTLISH_H
 #include "myDLL.h"
 
+typedef long long ll;
+
 enum EventType {
     PKT_ARRIVAL = 0,
     PKT_DEPARTURE,
@@ -9,8 +11,12 @@ enum EventType {
 
 struct EventNode {
     EventType event_type;
-    long long event_time;
+    ll event_time;
     int event_id;
+    EventNode(EventType event_type, ll event_time, int event_id) 
+        :   event_type(event_type),
+            event_time(event_time),
+            event_id(event_id) {}
 };
 
 class EventList {
@@ -18,8 +24,8 @@ public:
     EventList();
     void insertEventNode(EventNode* event);
     EventNode* removeEventNode();
-    const long long getMasterTime();
-    void updateMasterTime(long long);
+    ll getMasterTime();
+    void updateMasterTime(ll);
 private:
     long long MasterClockTime;
     myDLL* list;
