@@ -1,6 +1,8 @@
 #include <iostream>
 #include "myDLL.h"
 #include "exponentialRand.h"
+#include "EventList.h"
+#include "PKTArrivalEventGenerator.h"
 
 struct CSTYLE{
     char* str;
@@ -8,6 +10,20 @@ struct CSTYLE{
     CSTYLE(char* str, int index) :str(str), index(index) {}
 };
 
+int main(){
+    
+    EventList* global_event_list = new EventList();
+    PKTArrivalEventGenerator* generator0 = new PKTArrivalEventGenerator(global_event_list, 0.05, 100);
+    PKTArrivalEventGenerator* generator1 = new PKTArrivalEventGenerator(global_event_list, 10, 101);
+
+    EventNode* event = global_event_list->removeEventNode();
+    std::cout << event->event_id << std::endl;
+    event = global_event_list->removeEventNode();
+    std::cout << event->event_id << std::endl;
+
+    return 0;
+}
+/*
 int main(){
     // Step A : Generate 20 c-style string and its index
     char story[20][30] = {
@@ -53,3 +69,4 @@ int main(){
 
     return 0;
 }
+*/
