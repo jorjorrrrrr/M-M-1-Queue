@@ -4,10 +4,12 @@ CC = g++
 CFLAGS = -g -Wall
 #LIBS +=
 
-main: main.o myDLL.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o
-	$(CC) -o main main.o myDLL.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o && ./main
+main: main.o myDLL.o queueServer.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o
+	$(CC) -o main main.o myDLL.o queueServer.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o && ./main
 main.o: main.cpp myDLL.cpp myDLL.h exponentialRand.cpp exponentialRand.h
 	$(CC) $(CFLAGS) -c main.cpp
+queueServer.o: queueServer.cpp queueServer.h
+	$(CC) $(CFLAGS) -c queueServer.cpp
 PKTArrivalEventGenerator.o: PKTArrivalEventGenerator.cpp PKTArrivalEventGenerator.h
 	$(CC) $(CFLAGS) -c PKTArrivalEventGenerator.cpp
 myDLL.o: myDLL.cpp myDLL.h
