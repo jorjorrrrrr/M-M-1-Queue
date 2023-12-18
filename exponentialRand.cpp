@@ -15,6 +15,10 @@ exponentialRand::exponentialRand(unsigned int seed, double lambda) {
 }
 
 double exponentialRand::eRand() {
-    double r = rand() / (RAND_MAX + 1.0);   // generate r ∈ [0, 1]
+    double r, n = 0.0;
+    while (n == 0.0) {
+        n = rand();
+    }
+    r = n / (RAND_MAX + 1.0);   // generate r ∈ [0, 1]
     return ((-1 * log(r)) / lambda);
 }
