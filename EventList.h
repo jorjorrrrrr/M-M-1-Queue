@@ -11,9 +11,9 @@ enum EventType {
 
 struct EventNode {
     EventType event_type;
-    ll event_time;
+    double event_time;
     int event_id;
-    EventNode(EventType event_type, ll event_time, int event_id) 
+    EventNode(EventType event_type, double event_time, int event_id) 
         :   event_type(event_type),
             event_time(event_time),
             event_id(event_id) {}
@@ -27,7 +27,7 @@ public:
     ll getMasterTime();
     void updateMasterTime(ll);
 private:
-    long long MasterClockTime;
+    double MasterClockTime;
     myDLL* list;
 };
 
