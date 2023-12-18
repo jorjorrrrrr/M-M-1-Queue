@@ -5,7 +5,7 @@ struct myDLL_node {
     myDLL_node* next;	    // pointing to the next node in the list
     myDLL_node* prev;		// pointing to the previous node in the list
     void* dataPtr;	        // pointing to a c-style string
-    int index;	            // used for insertion sort
+    double index;	            // used for insertion sort
     myDLL_node(void* dataPtr, int index) : next(nullptr),
                                             prev(nullptr),
                                             dataPtr(dataPtr),
@@ -18,7 +18,7 @@ public:
     myDLL();	            // constructor
     void insertDataAtTail(void* dataStr_in);
     void* removeDataFromHead();
-    void insertSortData(void* dataStr_in, int index_in);
+    void insertSortData(void* dataStr_in, double index_in);
     void print();
 private:
     myDLL_node* head;	    //pointing to the 1st node in the list

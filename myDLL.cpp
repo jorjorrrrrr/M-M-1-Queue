@@ -43,7 +43,7 @@ void* myDLL::removeDataFromHead(){
     return node->dataPtr;
 }
 
-void myDLL::insertSortData(void* dataStr_in, int index_in){
+void myDLL::insertSortData(void* dataStr_in, double index_in){
     
     /* INSERT SORT : compare current node with new node from tail to head*/
 
