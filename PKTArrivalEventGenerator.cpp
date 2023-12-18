@@ -26,7 +26,7 @@ PKTArrivalEventGenerator::PKTArrivalEventGenerator(EventList* global_event_list,
 
 
 void PKTArrivalEventGenerator::createNewArrival(EventNode* event){
-    int event_time = event->event_time + exp_rand->eRand();
+    double event_time = event->event_time + exp_rand->eRand();
     EventNode* new_event = new EventNode(PKT_ARRIVAL, event_time, this->packet_id);
     this->global_event_list->insertEventNode(new_event);
 }
