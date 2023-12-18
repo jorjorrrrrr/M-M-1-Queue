@@ -2,7 +2,6 @@
 #define EVENTLISH_H
 #include "myDLL.h"
 
-typedef long long ll;
 
 enum EventType {
     PKT_ARRIVAL = 0,
@@ -24,8 +23,8 @@ public:
     EventList();
     void insertEventNode(EventNode* event);
     EventNode* removeEventNode();
-    ll getMasterTime();
-    void updateMasterTime(ll);
+    double getMasterTime();
+    void updateMasterTime(double);
 private:
     double MasterClockTime;
     myDLL* list;

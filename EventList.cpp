@@ -17,10 +17,10 @@ EventNode* EventList::removeEventNode() {
 }
 
 
-ll EventList::getMasterTime() {
+double EventList::getMasterTime() {
     return this->MasterClockTime;
 }
 
-void EventList::updateMasterTime(ll event_time) {
+void EventList::updateMasterTime(double event_time) {
     this->MasterClockTime = event_time;
 }
