@@ -13,13 +13,20 @@ struct CSTYLE{
 int main(){
     
     EventList* global_event_list = new EventList();
-    PKTArrivalEventGenerator* generator0 = new PKTArrivalEventGenerator(global_event_list, 0.05, 100);
-    PKTArrivalEventGenerator* generator1 = new PKTArrivalEventGenerator(global_event_list, 10, 101);
+    PKTArrivalEventGenerator* generator0 = new PKTArrivalEventGenerator(global_event_list, 1, 100);
+    PKTArrivalEventGenerator* generator1 = new PKTArrivalEventGenerator(global_event_list, 0.01, 101);
 
-    EventNode* event = global_event_list->removeEventNode();
-    std::cout << event->event_id << std::endl;
+    EventNode* event;
+
+    event = new EventNode(PKT_ARRIVAL, 10, 0);
+    generator0->createNewArrival(event);
+
     event = global_event_list->removeEventNode();
-    std::cout << event->event_id << std::endl;
+    std::cout << event->event_id << " " << event->event_time << std::endl;
+    event = global_event_list->removeEventNode();
+    std::cout << event->event_id << " " << event->event_time << std::endl;
+    event = global_event_list->removeEventNode();
+    std::cout << event->event_id << " " << event->event_time << std::endl;
 
     return 0;
 }
