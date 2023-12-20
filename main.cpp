@@ -21,12 +21,15 @@ int main(){
     event = new EventNode(PKT_ARRIVAL, 10, 0);
     generator0->createNewArrival(event);
 
+    global_event_list->print();
+    global_event_list->print();
     event = global_event_list->removeEventNode();
-    std::cout << event->event_id << " " << event->event_time << std::endl;
-    event = global_event_list->removeEventNode();
-    std::cout << event->event_id << " " << event->event_time << std::endl;
-    event = global_event_list->removeEventNode();
-    std::cout << event->event_id << " " << event->event_time << std::endl;
+    global_event_list->print();
+    //std::cout << event->event_id << " " << event->event_time << std::endl;
+    //event = global_event_list->removeEventNode();
+    //std::cout << event->event_id << " " << event->event_time << std::endl;
+    //event = global_event_list->removeEventNode();
+    //std::cout << event->event_id << " " << event->event_time << std::endl;
 
     return 0;
 }

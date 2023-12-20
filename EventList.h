@@ -22,9 +22,12 @@ class EventList {
 public:
     EventList();
     void insertEventNode(EventNode* event);
+    void insertEventNodeAtTail(EventNode* event);
     EventNode* removeEventNode();
     double getMasterTime();
     void updateMasterTime(double);
+    void print();
+    unsigned int get_listSize();
 private:
     double MasterClockTime;
     myDLL* list;

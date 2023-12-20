@@ -132,3 +132,7 @@ void myDLL::print(){
     }
     std::cout << std::endl;
 }
+
+unsigned int myDLL::get_listSize(){
+    return this->listSize;
+}

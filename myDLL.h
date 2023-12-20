@@ -20,6 +20,7 @@ public:
     void* removeDataFromHead();
     void insertSortData(void* dataStr_in, double index_in);
     void print();
+    unsigned int get_listSize();
 private:
     myDLL_node* head;	    //pointing to the 1st node in the list
     myDLL_node* tail;		// pointing to the last node in the list
