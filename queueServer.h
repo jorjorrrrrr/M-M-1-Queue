@@ -11,6 +11,8 @@ public:
     queueServer(int n, double mu, EventList* global_event_list);
     void enQueue(EventNode* event);
     void deQueue();
+    double calc_throughput(int index);
+    double calc_averagetime(int index);
 private:
     double mu;
     bool busy;

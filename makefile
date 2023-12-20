@@ -5,7 +5,7 @@ CFLAGS = -g -Wall
 #LIBS +=
 
 main: main.o myDLL.o queueServer.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o
-	$(CC) -o main main.o myDLL.o queueServer.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o && ./main
+	$(CC) -o main main.o myDLL.o queueServer.o PKTArrivalEventGenerator.o EventList.o exponentialRand.o && ./main | tee log.txt
 main.o: main.cpp myDLL.cpp myDLL.h exponentialRand.cpp exponentialRand.h
 	$(CC) $(CFLAGS) -c main.cpp
 queueServer.o: queueServer.cpp queueServer.h
@@ -19,4 +19,4 @@ EventList.o: EventList.cpp EventList.h
 exponentialRand.o: exponentialRand.cpp exponentialRand.h
 	$(CC) $(CFLAGS) -c exponentialRand.cpp
 clean:
-	rm -f main *.o
+	rm -f main *.o log.txt
